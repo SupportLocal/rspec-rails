@@ -13,9 +13,10 @@ module RSpec::Rails
 
       private
 
-      def method_missing(m, *args, &block)
-        routes.url_helpers.respond_to?(m) ? routes.url_helpers.send(m, *args) : super
-      end
+# XXX This is breaking my routing specs.
+#     def method_missing(m, *args, &block)
+#       routes.url_helpers.respond_to?(m) ? routes.url_helpers.send(m, *args) : super
+#     end
     end
 
     included do
